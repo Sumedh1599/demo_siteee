@@ -1,0 +1,203 @@
+.loading-page {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.loading-page.dark-theme {
+  background-color: #000;
+}
+
+.loading-page.light-theme {
+  background-color: #fff;
+}
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.loader-container {
+  width: 220px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.dark-theme .loading-text {
+  color: #fff;
+}
+
+.light-theme .loading-text {
+  color: #000;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.letter-u {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 12px solid;
+  border-top: none;
+  border-radius: 0 0 60px 60px;
+  box-sizing: border-box;
+  right: 10px;
+  transform: rotate(-45deg);
+  z-index: 2;
+  transform-origin: center;
+}
+
+.dark-theme .letter-u {
+  border-color: #fff;
+}
+
+.light-theme .letter-u {
+  border-color: #000;
+}
+
+.letter-u-inverted {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 12px solid;
+  border-bottom: none;
+  border-radius: 60px 60px 0 0;
+  box-sizing: border-box;
+  left: 10px;
+  transform: rotate(-45deg);
+  z-index: 2;
+  transform-origin: center;
+}
+
+.dark-theme .letter-u-inverted {
+  border-color: #fff;
+}
+
+.light-theme .letter-u-inverted {
+  border-color: #000;
+}
+
+.number-zero {
+  position: absolute;
+  width: 140px;
+  height: 60px;
+  border: 12px solid;
+  border-radius: 70px / 30px;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 1;
+}
+
+.dark-theme .number-zero {
+  border-color: #fff;
+}
+
+.light-theme .number-zero {
+  border-color: #000;
+}
+
+/* Animation Keyframes - Dark Theme (slower) */
+.dark-theme .auto-zero-disappear {
+  animation: zeroDisappear 0.5s ease-in-out forwards;
+}
+
+.dark-theme .auto-rotate-clockwise {
+  animation: rotateClockwise 1s ease-in-out forwards;
+}
+
+.dark-theme .auto-rotate-anticlockwise225 {
+  animation: rotateAnticlockwise225 1s ease-in-out forwards;
+}
+
+.dark-theme .auto-spin-together {
+  animation: variableSpin 2s linear infinite;
+}
+
+/* Animation Keyframes - Light Theme (faster) */
+.light-theme .auto-zero-disappear {
+  animation: zeroDisappear 0.4s ease-in-out forwards;
+}
+
+.light-theme .auto-rotate-clockwise {
+  animation: rotateClockwise 0.8s ease-in-out forwards;
+}
+
+.light-theme .auto-rotate-anticlockwise225 {
+  animation: rotateAnticlockwise225 0.8s ease-in-out forwards;
+}
+
+.light-theme .auto-spin-together {
+  animation: variableSpin 1.2s linear infinite;
+}
+
+/* Animation Keyframes */
+@keyframes zeroDisappear {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes rotateClockwise {
+  0% { transform: rotate(-45deg); }
+  100% { transform: rotate(90deg); }
+}
+
+@keyframes rotateAnticlockwise225 {
+  0% { transform: rotate(-45deg); }
+  100% { transform: rotate(-270deg); }
+}
+
+/* Stage 3: Variable speed spinning */
+@keyframes variableSpin {
+  0% { 
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+  25% { 
+    transform: rotate(90deg);
+    animation-timing-function: linear;
+  }
+  50% { 
+    transform: rotate(180deg);
+    animation-timing-function: ease-in-out;
+  }
+  75% { 
+    transform: rotate(270deg);
+    animation-timing-function: linear;
+  }
+  100% { 
+    transform: rotate(360deg);
+    animation-timing-function: ease-in-out;
+  }
+}
+
