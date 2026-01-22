@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Launching Soon - Verbll</title>
     <link rel="stylesheet" href="loading/Loading.css">
+    <link rel="stylesheet" href="fan-loader.css">
     <style>
         body {
             margin: 0;
@@ -37,20 +38,45 @@
         
         .logo-container {
             position: absolute;
-            top: 30%;
+            top: 50%;
             transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
         .logo {
             width: 800px;
             height: auto;
             opacity: 0.9;
+            z-index: 2;
+        }
+        
+        .tagline {
+            text-align: center;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-top: -60px;
+            opacity: 0.8;
+        }
+        
+        .title-side-logo {
+            height: 400px;
+            width: auto;
+            opacity: 1;
+            z-index: 1;
         }
         
         .loader-section {
             position: absolute;
-            top: 15%;
-            transform: translateY(-50%);
+            top: 51%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
         }
         
         .launch-text {
@@ -62,7 +88,15 @@
             letter-spacing: 3px;
             color: #fff;
             text-transform: uppercase;
-            animation: fadeInOut 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .text-logo {
+            height: 34px;
+            width: auto;
+            opacity: 0.9;
         }
         
         @keyframes fadeInOut {
@@ -102,23 +136,29 @@
     <div class="launch-container">
         <!-- Logo positioned above center -->
         <div class="logo-container">
-            <img src="titlelogo/verbll_dark.png" alt="Verbll Logo" class="logo">
+            <img src="titlelogo/logo.png" alt="Logo" class="title-side-logo">
+            <div>
+                <img src="titlelogo/verbll_dark.png" alt="Verbll Logo" class="logo">
+                <div class="tagline">Learn beyond books with AI</div>
+            </div>
         </div>
         
         <!-- CSS Loader -->
         <div class="loader-section">
-            <div class="loading-page dark-theme">
-                <div class="loader-wrapper">
-                    <div class="loader-container">
-                        <div class="letter-u" style="transform: rotate(90deg);"></div>
-                        <div class="letter-u-inverted" style="transform: rotate(-270deg);"></div>
-                    </div>
+            <div class="fan-container">
+                <div class="fan">
+                    <div class="blade blade-1"></div>
+                    <div class="blade blade-2"></div>
+                    <div class="blade blade-3"></div>
+                    <div class="blade blade-4"></div>
                 </div>
             </div>
         </div>
         
         <!-- Launching Soon Text -->
-        <div class="launch-text">Launching Soon</div>
+        <div class="launch-text">
+            Launching Soon
+        </div>
     </div>
 </body>
 </html>

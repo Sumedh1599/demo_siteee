@@ -1,0 +1,62 @@
+.fan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 450px;
+  perspective: 1500px;
+}
+
+.fan {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  transform-style: preserve-3d;
+  animation: fanSpin 1.5s linear infinite;
+}
+
+.blade {
+  position: absolute;
+  width: 75px;
+  height: 187.5px;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  border-radius: 4px;
+  backface-visibility: visible;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.blade-1, .blade-3 {
+  background: #ff0000;
+}
+
+.blade-2, .blade-4 {
+  background: #ffffff;
+}
+
+.blade-1 {
+  transform: translate(-50%, -50%) rotateZ(0deg) rotateY(90deg);
+}
+
+.blade-2 {
+  transform: translate(-50%, -50%) rotateZ(90deg) rotateY(90deg);
+}
+
+.blade-3 {
+  transform: translate(-50%, -50%) rotateZ(180deg) rotateY(90deg);
+}
+
+.blade-4 {
+  transform: translate(-50%, -50%) rotateZ(270deg) rotateY(90deg);
+}
+
+@keyframes fanSpin {
+  0% {
+    transform: rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
