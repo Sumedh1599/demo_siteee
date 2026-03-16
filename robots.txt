@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://verbll.com/sitemap.xml
+Sitemap: https://www.verbll.com/sitemap.xml
 
 # Crawl-delay (optional, be respectful to servers)
 Crawl-delay: 1
