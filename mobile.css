@@ -15,6 +15,12 @@
     margin: 20px;
   }
   
+  .text-container span {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Bradley Hand', cursive;
+    font-size: 100px;
+    font-weight: normal;
+  }
+  
   .join-early-access-btn {
     min-height: 48px; /* Larger touch target */
     padding: 16px 32px;
@@ -48,12 +54,32 @@
     font-size: 14px;
     min-height: 44px;
   }
+  
+  .titlebar-right .early-access-btn {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(100, 100, 255, 0.3), rgba(150, 100, 255, 0.4));
+    border: 2px solid rgba(100, 100, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(100, 100, 255, 0.3);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .welcome-card {
     padding: 20px 15px;
     margin: 15px;
+  }
+  
+  .text-container span {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Bradley Hand', cursive;
+    font-size: 80px;
+    font-weight: normal;
   }
   
   .join-early-access-btn {
