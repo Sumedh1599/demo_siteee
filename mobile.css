@@ -8,17 +8,45 @@
   user-scalable: no;
 }
 
-/* Mobile-specific improvements */
+/* Disable scroll-snap on mobile */
 @media (max-width: 768px) {
+  body, html, #root {
+    scroll-snap-type: none !important;
+    scroll-behavior: smooth !important;
+    overflow-y: auto !important;
+  }
+  
+  /* Remove fixed height from root */
+  #root {
+    min-height: auto !important;
+    height: auto !important;
+  }
+  
+  /* Hide desktop titlebar */
+  .titlebar {
+    display: none !important;
+  }
+  
+  /* Adjust text container for mobile */
+  .text-container {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 60px !important;
+    scroll-snap-align: none !important;
+    scroll-snap-stop: none !important;
+    position: relative !important;
+  }
+  
+  /* Mobile welcome card */
   .welcome-card {
     padding: 30px 20px;
     margin: 20px;
-  }
-  
-  .text-container span {
-    font-family: 'Helvetica Neue', 'Arial', 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+    min-height: auto !important;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   
   .verbll-title {
@@ -27,52 +55,158 @@
     font-weight: 700;
   }
   
-  .join-early-access-btn {
-    min-height: 48px; /* Larger touch target */
-    padding: 16px 32px;
-    font-size: 16px;
-    font-weight: 700;
-    background: linear-gradient(135deg, rgba(100, 100, 255, 0.3), rgba(150, 100, 255, 0.4));
-    border: 2px solid rgba(100, 100, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(100, 100, 255, 0.3);
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 12px;
+  .tagline {
+    font-size: 24px !important;
+    margin-bottom: 30px !important;
   }
   
-  .explore-btn {
-    min-height: 48px;
+  .explore-button-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px !important;
+  }
+  
+  .explore-btn, .join-early-access-btn {
+    width: 100%;
+    max-width: 300px;
     padding: 16px 24px;
     font-size: 16px;
+    min-height: 48px;
   }
   
-  .titlebar {
-    padding: 10px 20px;
+  /* Mobile section cards - continuous scrolling */
+  .demo-section,
+  .ai-chat-section,
+  .brainstorm-section,
+  .code-now-section,
+  .course-designer-section,
+  .deep-research-section,
+  .video-summarizer-section,
+  .my-notes-section,
+  .problem-section,
+  .about-section,
+  .benchmark-section,
+  .market-section,
+  .features-section,
+  .personalisation-section {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 20px !important;
+    margin: 20px 0 !important;
+    scroll-snap-align: none !important;
+    scroll-snap-stop: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: block !important;
   }
   
-  .titlebar-left {
-    gap: 8px;
+  .section-card {
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-height: 400px;
   }
   
-  .titlebar-right .nav-btn {
-    padding: 12px 16px;
-    font-size: 14px;
-    min-height: 44px;
+  /* Ensure videos are visible and playable on mobile */
+  .video-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 250px !important;
+    min-height: 250px !important;
+    background: #000 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    display: block !important;
+    opacity: 1 !important;
   }
   
-  .titlebar-right .early-access-btn {
-    min-height: 44px;
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    background: linear-gradient(135deg, rgba(100, 100, 255, 0.3), rgba(150, 100, 255, 0.4));
-    border: 2px solid rgba(100, 100, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(100, 100, 255, 0.3);
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .video-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+  }
+  
+  .video-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    opacity: 1 !important;
+  }
+  
+  .play-button {
+    width: 60px !important;
+    height: 60px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .play-button:hover {
+    transform: scale(1.1) !important;
+    background: white !important;
+  }
+  
+  /* Mobile feature cards */
+  .feature-card {
+    background: rgba(30, 30, 40, 0.9);
+    backdrop-filter: blur(20px);
     border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .feature-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+  
+  /* Mobile footer */
+  .footer {
+    padding: 40px 20px !important;
+    margin-top: 40px !important;
+  }
+  
+  .footer-title {
+    font-size: 28px !important;
+  }
+  
+  .footer-description {
+    font-size: 16px !important;
   }
 }
 
@@ -82,44 +216,23 @@
     margin: 15px;
   }
   
-  .text-container span {
-    font-family: 'Helvetica Neue', 'Arial', 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-    font-size: 80px;
-    font-weight: 700;
-  }
-  
   .verbll-title {
-    font-family: 'Helvetica Neue', 'Arial', 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
     font-size: 80px;
-    font-weight: 700;
   }
   
-  .join-early-access-btn {
-    padding: 12px 20px;
-    font-size: 14px;
-    min-height: 44px;
-    font-weight: 700;
-    background: linear-gradient(135deg, rgba(100, 100, 255, 0.3), rgba(150, 100, 255, 0.4));
-    border: 2px solid rgba(100, 100, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(100, 100, 255, 0.3);
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 12px;
+  .tagline {
+    font-size: 20px !important;
   }
   
-  .titlebar {
-    padding: 8px 15px;
+  .section-card {
+    padding: 20px;
   }
   
-  .titlebar-left img.logo {
-    width: 32px;
-    height: 32px;
+  .feature-title {
+    font-size: 18px;
   }
   
-  .titlebar-right .nav-btn {
-    padding: 10px 12px;
-    font-size: 12px;
-    min-height: 40px;
+  .feature-description {
+    font-size: 13px;
   }
 }
