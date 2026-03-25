@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { LiquidMetal } from '@paper-design/shaders-react';
 import { exchangeCodeForTokens, decodeJWT } from './utils/api';
 import './App.css';
 import './mobile.css'; // Import mobile-specific styles
@@ -632,7 +633,28 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="gradient-bg" aria-hidden="true" />
+      <div className="gradient-bg" aria-hidden="true">
+        <LiquidMetal
+          width="100%"
+          height="100%"
+          colorBack="#ffffff"
+          colorTint="#2d2c72"
+          shape="metaballs"
+          repetition={6}
+          softness={1}
+          shiftRed={-0.64}
+          shiftBlue={-1}
+          distortion={0.4}
+          contour={0.4}
+          angle={86}
+          speed={1.8}
+          scale={1.68}
+          rotation={108}
+          offsetX={-0.78}
+          offsetY={0}
+          fit="cover"
+        />
+      </div>
       
       <div className={`demo-section ${showDemo ? 'visible' : ''}`} ref={scrollRef} data-titlebar-nav="demo">
         <div className="demo-card scroll-reveal-card" ref={demoCardRef}>

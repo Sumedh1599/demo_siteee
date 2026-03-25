@@ -5,9 +5,9 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: rgba(10, 10, 20, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  backdrop-filter: none;
+  border-bottom: none;
   z-index: 1000;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +17,7 @@
 .mobile-titlebar .menu-toggle {
   background: none;
   border: none;
-  color: white;
+  color: #0d1f1e;
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -25,14 +25,14 @@
 }
 
 .mobile-titlebar .menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .mobile-titlebar .mobile-logo {
   font-family: 'Helvetica Neue', 'Arial', 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: white;
+  color: #0d1f1e;
 }
 
 .mobile-titlebar .early-access-btn {

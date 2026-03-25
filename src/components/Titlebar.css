@@ -5,13 +5,13 @@
   width: 100%;
   height: 65px;
   /* Solid fill (no stripe pattern, no transparency) — same base mint as page background-color */
-  background: #e5f7f5;
+  background: #ffffff;
   backdrop-filter: none;
   z-index: 999;
   pointer-events: auto;
   -webkit-app-region: drag;
-  box-shadow: 0 1px 4px rgba(10, 90, 85, 0.06);
-  border-bottom: 1px solid rgba(10, 186, 181, 0.18);
+  box-shadow: none;
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: space-between;

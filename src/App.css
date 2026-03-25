@@ -98,6 +98,7 @@ code {
   font-family: 'Helvetica Neue', 'Arial', 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
   font-size: 150px;
   font-weight: 700;
+  text-shadow: none;
 }
 
 .tagline {
@@ -106,7 +107,7 @@ code {
   font-size: 48px;
   font-weight: 600;
   color: #0d3d38;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  text-shadow: none;
   letter-spacing: 0.02em;
   line-height: 1.25;
   margin: 0;
@@ -1992,23 +1993,19 @@ code {
   left: 0;
   overflow: hidden;
   z-index: 1;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(129, 216, 208, 0.95),
-      rgba(10, 186, 181, 0.85) 120px,
-      rgba(129, 216, 208, 0.95) 120px,
-      rgba(10, 186, 181, 0.85) 240px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(129, 216, 208, 0.95),
-      rgba(10, 186, 181, 0.85) 120px,
-      rgba(129, 216, 208, 0.95) 120px,
-      rgba(10, 186, 181, 0.85) 240px
-    );
-  background-color: #e5f7f5;
-  background-blend-mode: overlay;
+  /* Shader canvas sits on top of this fallback. */
+  background: #ffffff;
+  pointer-events: none;
+  backdrop-filter: none;
+}
+
+.gradient-bg canvas,
+.gradient-bg svg {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
 }
 
 /* Responsive adjustments */
