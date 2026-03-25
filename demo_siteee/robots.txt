@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://verbll.com/sitemap.xml
+
+# Crawl-delay (optional, be respectful to servers)
+Crawl-delay: 1
+
+# Allow search engines to crawl all important sections
+Allow: /#about
+Allow: /#demo
+Allow: /#features
+Allow: /#contact
+
+# Block common non-content paths (if any)
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /package*.json
+Disallow: /*.jsx
+Disallow: /*.css.map
